@@ -26,7 +26,7 @@ Built from **SCSS** + **TailwindCSS** with **Vite**\
 ## 💾 How to Download Pretty Forms
 
 You should **inject** the **CSS** to your **project**\
-**Download** either **normal** or **minified** version from _releases/_
+**Download** either **normal** or **gzipped** version from _releases/_
 
 **Add to your project**
 
@@ -53,8 +53,8 @@ pnpm build
 ```
 
 **Once you built the app**\
-Move the CSS from _dist/assets/index.css_\
-to _releases/germondaiPrettyForms.css_
+Move both normal and gzipped CSS from _dist/assets/_ to _releases/_\
+and rename them to something like _germondaiPrettyForms_
 
 ---
 
