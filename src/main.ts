@@ -17,11 +17,12 @@ document.querySelector<HTMLStyleElement>('style')!.innerHTML = `
     height: -webkit-fill-available;
     display: grid;
     place-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .cont {
     width: calc(100% / 3);
+    padding: 8px 0;
   }
 
   .form {
@@ -30,11 +31,17 @@ document.querySelector<HTMLStyleElement>('style')!.innerHTML = `
     padding: 16px;
     border-radius: 12px;
   }
+
+  @media (max-width: 768px) {
+    .cont {
+      width: 95%;
+    }
+  }
 `
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div class="cont">
-    <form action="" method="post" class="form shdw">
+    <form action="" method="post" class="form form-overflow shdw">
       <b class="form-title">Form Example</b>
       <div class="field large">
         <input id="username" name="username" type="text" placeholder="x" required />
