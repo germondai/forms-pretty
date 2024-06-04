@@ -1,9 +1,40 @@
 import './style.scss'
 
 // base form example
+document.querySelector<HTMLStyleElement>('style')!.innerHTML = `
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #app {
+    width: 100%;
+    height: -webkit-fill-available;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+
+  .cont {
+    width: calc(100% / 3);
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+`
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div class="w-1/3">
-    <form action="" method="post" class="form flex-col gap-2 p-4 rounded-xl shdw">
+  <div class="cont">
+    <form action="" method="post" class="form shdw">
       <b class="form-title">Form Example</b>
       <div class="field large">
         <input id="username" name="username" type="text" placeholder="x" required />
@@ -29,7 +60,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <b>Terms of condition</b>
         <div class="field">
           <div class="box">
-            <input id="consent-agree" name="consent" type="radio" required class="w-12" />
+            <input id="consent-agree" name="consent" type="radio" required />
             <label for="consent-agree">Agree</label>
           </div>
           <div class="box">

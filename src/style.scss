@@ -4,130 +4,127 @@
 
 /* --- UTILITIES --- */
 @layer utilities {
-    .shdw {
-        box-shadow:
-            inset 0 0 0.8px 1px hsla(0, 0%, 100%, 0.1),
-            0 0 0 1px hsla(230, 13%, 9%, 0.075),
-            0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
-            0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
-            0 3.5px 6px hsla(230, 13%, 9%, 0.09);
-    }
+  .shdw {
+    box-shadow:
+      inset 0 0 0.8px 1px hsla(0, 0%, 100%, 0.1),
+      0 0 0 1px hsla(230, 13%, 9%, 0.075),
+      0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+      0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+      0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+  }
 }
 
 /* --- PRETTY FORMS by @germondai --- */
 .form {
-    @apply relative flex;
+  @apply relative flex;
 
-    .form-title {
-        @apply text-center;
+  .form-title {
+    @apply text-center;
+  }
+
+  .form-btn {
+    @apply flex items-center justify-center px-4 py-2 rounded-lg shdw;
+  }
+
+  .multi:has(.field) {
+    @apply flex flex-col items-center p-0.5 rounded-lg shdw;
+  }
+
+  .field {
+    @apply relative w-full flex items-center gap-2;
+
+    &:has(input[type='checkbox']),
+    &:has(input[type='radio']) {
+      @apply flex items-center justify-around gap-2;
+
+      .box {
+        @apply flex flex-col items-center justify-center;
+      }
+
+      label {
+        @apply relative order-first w-auto text-white transform-none pointer-events-auto;
+      }
     }
 
-    .form-btn {
-        @apply flex items-center justify-center px-4 py-2 rounded-lg shdw;
+    &:has(textarea),
+    &:has(select) {
+      @apply mb-0;
+
+      textarea,
+      select {
+        &:focus ~ label,
+        &:not(:placeholder-shown) ~ label {
+          @apply top-3;
+        }
+      }
+
+      label {
+        @apply top-6;
+      }
     }
 
-    .multi:has(.field) {
-        @apply flex flex-col items-center p-0.5 rounded-lg shdw;
+    label {
+      transition:
+        font-size 0.3s,
+        top 0.3s;
+      @apply absolute top-1/2 -translate-y-[50%] left-4 pr-2.5 w-[calc(100%-0.5rem)] inline-block truncate leading-none pointer-events-none;
     }
 
-    .field {
-        @apply relative w-full flex items-center gap-2;
+    &.large {
+      input:not([type='submit']),
+      select,
+      textarea {
+        @apply min-h-12;
+      }
+    }
+  }
 
-        &:has(input[type="checkbox"]),
-        &:has(input[type="radio"]) {
-            @apply flex items-center justify-around gap-2;
-
-            .box {
-                @apply flex flex-col items-center justify-center;
-            }
-
-            label {
-                @apply relative order-first w-auto text-white transform-none pointer-events-auto;
-            }
-        }
-
-        &:has(textarea),
-        &:has(select) {
-            @apply mb-0;
-
-            textarea,
-            select {
-
-                &:focus~label,
-                &:not(:placeholder-shown)~label {
-                    @apply top-3;
-                }
-            }
-
-            label {
-                @apply top-6;
-            }
-        }
-
-        label {
-            transition:
-                font-size 0.3s,
-                top 0.3s;
-            @apply absolute top-1/2 -translate-y-[50%] left-4 pr-2.5 w-[calc(100%-0.5rem)] inline-block truncate leading-none pointer-events-none;
-        }
-
-        &.large {
-
-            input:not([type='submit']),
-            select,
-            textarea {
-                @apply min-h-12;
-            }
-        }
+  input,
+  textarea,
+  select {
+    &:not([type='submit']) {
+      transition: padding-top 0.3s;
+      @apply relative w-full min-h-11 p-4 px-2 pb-0.5 rounded-lg;
     }
 
-    input,
-    textarea,
-    select {
-        &:not([type='submit']) {
-            transition: padding-top 0.3s;
-            @apply relative w-full min-h-11 p-4 px-2 pb-0.5 rounded-lg;
-        }
-
-        &:not([type='submit']):not([type='radio']):not([type='checkbox']) {
-            @apply shdw;
-        }
-
-        &:required~label {
-            @apply flex items-center before:content-['*'] before:text-red-600 before:ml-1 before:mt-0.5 before:order-2 before:text-xl before:leading-none;
-        }
-
-        &::placeholder {
-            @apply text-transparent opacity-0;
-        }
-
-        &:focus~label,
-        &:not(:placeholder-shown)~label {
-            @apply text-xs top-1/4 left-2 opacity-60;
-        }
+    &:not([type='submit']):not([type='radio']):not([type='checkbox']) {
+      @apply shdw;
     }
 
-    input,
-    button {
-        &[type='number'] {
-
-            &::-webkit-outer-spin-button,
-            &::-webkit-inner-spin-button {
-                appearance: none;
-            }
-        }
-
-        &[type='checkbox'],
-        &[type='radio'] {
-            @apply min-w-8 w-8 aspect-square;
-        }
+    &:required ~ label {
+      @apply flex items-center before:content-['*'] before:text-red-600 before:ml-1 before:mt-0.5 before:order-2 before:text-xl before:leading-none;
     }
 
-    textarea {
-        @apply resize-y pt-[18px] h-[164px] max-h-[40vh] max-xl:max-h-[30vh];
+    &::placeholder {
+      @apply text-transparent opacity-0;
     }
 
-    span[role='alert'] {
-        @apply text-red-600;
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      @apply text-xs top-1/4 left-2 opacity-60;
     }
+  }
+
+  input,
+  button {
+    &[type='number'] {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+      }
+    }
+
+    &[type='checkbox'],
+    &[type='radio'] {
+      @apply min-w-8 w-8 aspect-square;
+    }
+  }
+
+  textarea {
+    @apply resize-y pt-[18px] h-[164px] max-h-[40vh] max-xl:max-h-[30vh];
+  }
+
+  span[role='alert'] {
+    @apply text-red-600;
+  }
 }
