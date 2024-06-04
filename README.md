@@ -1,13 +1,17 @@
 <h1 align="center">
-    <img align="center" src="https://skillicons.dev/icons?i=html,css,scss,tailwind,vite" /><br/><br/>
-    <span>Pretty Forms</span>
+    <a href="https://germondai.com" target="_blank">
+        <img align="center" src="https://skillicons.dev/icons?i=html,css,scss,tailwind,vite" /><br/><br/>
+        <span>Pretty Forms</span>
+    </a>
 </h1>
 
 Universal **CSS** style to make your **HTML** forms **pretty**!\
 Built from **SCSS** + **TailwindCSS** with **Vite**\
 **Simple** to **download**, **lightweight**, **no configuration** needed!
 
-<img align="center" src="/public/prettyFormsExample.webp" />
+<a href="https://germondai.com" target="_blank">
+    <img align="center" src="/public/prettyFormsExample.webp" />
+</a>
 
 ## ⚡️ Features
 
