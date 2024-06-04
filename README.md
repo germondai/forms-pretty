@@ -11,7 +11,7 @@ Universal **CSS** style to make your **HTML** forms **pretty**!\
 Built from **SCSS** + **TailwindCSS** with **Vite**\
 **Simple** to **download**, **lightweight**, **no configuration** needed!
 
-<a href="https://germondai.com" target="_blank">
+<a href="https://raw.githubusercontent.com/germondai/forms-pretty/dev/public/prettyFormsExample.webp" target="_blank">
     <img align="center" src="/public/prettyFormsExample.webp" />
 </a>
 
