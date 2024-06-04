@@ -1,9 +1,11 @@
 <h1 align="center">
-    <a href="https://germondai.com" target="_blank">
+    <a href="https://github.com/germondai/forms-pretty/releases/latest" target="_blank">
         <img align="center" src="https://skillicons.dev/icons?i=html,css,scss,tailwind,vite" /><br/><br/>
         <span>Pretty Forms</span>
     </a>
 </h1>
+
+<a href="https://github.com/germondai/forms-pretty/releases/latest" target="_blank">DOWNLOAD HERE!</a>
 
 Universal **CSS** style to make your **HTML** forms **pretty**!\
 Built from **SCSS** + **TailwindCSS** with **Vite**\
