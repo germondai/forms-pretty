@@ -26,7 +26,9 @@ Built from **SCSS** + **TailwindCSS** with **Vite**\
 ## 💾 How to Download Pretty Forms
 
 You should **inject** the **CSS** to your **project**\
-**Download** either **normal** or **gzipped** version from _releases/_
+**Download** either **normal** or **gzipped** version from _releases/_\
+or from assets of this 
+<a href="https://github.com/germondai/forms-pretty/releases/latest" target="_blank">release</a>
 
 **Add to your project**
 
