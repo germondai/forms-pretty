@@ -2,28 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* --- ESSENTIALS --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    color-scheme: dark;
+/* --- UTILITIES --- */
+@layer utilities {
+    .shdw {
+        box-shadow:
+            inset 0 0 0.8px 1px hsla(0, 0%, 100%, 0.1),
+            0 0 0 1px hsla(230, 13%, 9%, 0.075),
+            0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+            0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+            0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+    }
 }
 
-/* pretty forms by @germondai */
+/* --- PRETTY FORMS by @germondai --- */
 .form {
     @apply relative flex;
 
+    .form-title {
+        @apply text-center;
+    }
+
+    .form-btn {
+        @apply flex items-center justify-center px-4 py-2 rounded-lg shdw;
+    }
+
+    .multi:has(.field) {
+        @apply flex flex-col items-center p-0.5 rounded-lg shdw;
+    }
+
     .field {
-        @apply relative w-full;
+        @apply relative w-full flex items-center gap-2;
 
         &:has(input[type="checkbox"]),
         &:has(input[type="radio"]) {
-            @apply flex items-center justify-center gap-2;
+            @apply flex items-center justify-around gap-2;
+
+            .box {
+                @apply flex flex-col items-center justify-center;
+            }
 
             label {
-                @apply relative order-first w-auto text-white;
+                @apply relative order-first w-auto text-white transform-none pointer-events-auto;
             }
         }
 
@@ -54,7 +73,9 @@
 
         &.large {
 
-            input:not([type='submit']) {
+            input:not([type='submit']),
+            select,
+            textarea {
                 @apply min-h-12;
             }
         }
@@ -63,6 +84,15 @@
     input,
     textarea,
     select {
+        &:not([type='submit']) {
+            transition: padding-top 0.3s;
+            @apply relative w-full min-h-11 p-4 px-2 pb-0.5 rounded-lg;
+        }
+
+        &:not([type='submit']):not([type='radio']):not([type='checkbox']) {
+            @apply shdw;
+        }
+
         &:required~label {
             @apply flex items-center before:content-['*'] before:text-red-600 before:ml-1 before:mt-0.5 before:order-2 before:text-xl before:leading-none;
         }
@@ -77,20 +107,6 @@
         }
     }
 
-    input:not([type='submit']),
-    textarea,
-    select {
-        transition: padding-top 0.3s;
-        @apply relative w-full max-h-[164px] p-4 px-2 pb-0.5 rounded-lg;
-        @apply shdw;
-        // @apply min-h-10;
-        // @apply min-w-64;
-
-        &.w-btn-in {
-            @apply pr-12;
-        }
-    }
-
     input,
     button {
         &[type='number'] {
@@ -101,31 +117,17 @@
             }
         }
 
-        &[type='checkbox'] {
-            @apply w-auto min-w-[42px] aspect-square;
-        }
-
-        &.form-btn &[type='submit'] {
-            @apply w-full flex items-center justify-center cursor-pointer border-0 my-2 p-1 rounded-2xl;
+        &[type='checkbox'],
+        &[type='radio'] {
+            @apply min-w-8 w-8 aspect-square;
         }
     }
 
     textarea {
-        @apply resize-y pt-[18px] min-h-[164px] max-h-[40vh] max-xl:max-h-[30vh];
+        @apply resize-y pt-[18px] h-[164px] max-h-[40vh] max-xl:max-h-[30vh];
     }
 
     span[role='alert'] {
         @apply text-red-600;
-    }
-}
-
-@layer utilities {
-    .shdw {
-        box-shadow:
-            inset 0 0 0.8px 1px hsla(0, 0%, 100%, 0.1),
-            0 0 0 1px hsla(230, 13%, 9%, 0.075),
-            0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
-            0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
-            0 3.5px 6px hsla(230, 13%, 9%, 0.09);
     }
 }
