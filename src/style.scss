@@ -1,3 +1,131 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* --- ESSENTIALS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+/* pretty forms by @germondai */
+.form {
+    @apply relative flex;
+
+    .field {
+        @apply relative w-full;
+
+        &:has(input[type="checkbox"]),
+        &:has(input[type="radio"]) {
+            @apply flex items-center justify-center gap-2;
+
+            label {
+                @apply relative order-first w-auto text-white;
+            }
+        }
+
+        &:has(textarea),
+        &:has(select) {
+            @apply mb-0;
+
+            textarea,
+            select {
+
+                &:focus~label,
+                &:not(:placeholder-shown)~label {
+                    @apply top-3;
+                }
+            }
+
+            label {
+                @apply top-6;
+            }
+        }
+
+        label {
+            transition:
+                font-size 0.3s,
+                top 0.3s;
+            @apply absolute top-1/2 -translate-y-[50%] left-4 pr-2.5 w-[calc(100%-0.5rem)] inline-block truncate leading-none pointer-events-none;
+        }
+
+        &.large {
+
+            input:not([type='submit']) {
+                @apply min-h-12;
+            }
+        }
+    }
+
+    input,
+    textarea,
+    select {
+        &:required~label {
+            @apply flex items-center before:content-['*'] before:text-red-600 before:ml-1 before:mt-0.5 before:order-2 before:text-xl before:leading-none;
+        }
+
+        &::placeholder {
+            @apply text-transparent opacity-0;
+        }
+
+        &:focus~label,
+        &:not(:placeholder-shown)~label {
+            @apply text-xs top-1/4 left-2 opacity-60;
+        }
+    }
+
+    input:not([type='submit']),
+    textarea,
+    select {
+        transition: padding-top 0.3s;
+        @apply relative w-full max-h-[164px] p-4 px-2 pb-0.5 rounded-lg;
+        @apply shdw;
+        // @apply min-h-10;
+        // @apply min-w-64;
+
+        &.w-btn-in {
+            @apply pr-12;
+        }
+    }
+
+    input,
+    button {
+        &[type='number'] {
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+                appearance: none;
+            }
+        }
+
+        &[type='checkbox'] {
+            @apply w-auto min-w-[42px] aspect-square;
+        }
+
+        &.form-btn &[type='submit'] {
+            @apply w-full flex items-center justify-center cursor-pointer border-0 my-2 p-1 rounded-2xl;
+        }
+    }
+
+    textarea {
+        @apply resize-y pt-[18px] min-h-[164px] max-h-[40vh] max-xl:max-h-[30vh];
+    }
+
+    span[role='alert'] {
+        @apply text-red-600;
+    }
+}
+
+@layer utilities {
+    .shdw {
+        box-shadow:
+            inset 0 0 0.8px 1px hsla(0, 0%, 100%, 0.1),
+            0 0 0 1px hsla(230, 13%, 9%, 0.075),
+            0 0.3px 0.4px hsla(230, 13%, 9%, 0.02),
+            0 0.9px 1.5px hsla(230, 13%, 9%, 0.045),
+            0 3.5px 6px hsla(230, 13%, 9%, 0.09);
+    }
+}
