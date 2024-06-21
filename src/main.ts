@@ -32,6 +32,12 @@ document.querySelector<HTMLStyleElement>('style')!.innerHTML = `
     border-radius: 12px;
   }
 
+  @media (max-width: 1440px) {
+    .cont {
+      width: 50%;
+    }
+  }
+
   @media (max-width: 768px) {
     .cont {
       width: 95%;
@@ -44,8 +50,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <form action="" method="post" class="form form-overflow shdw">
       <b class="form-title">Form Example</b>
       <div class="field large">
-        <input id="username" name="username" type="text" placeholder="x" required />
-        <label for="username">Username</label>
+        <input id="fullname" name="fullname" type="text" placeholder="x" required />
+        <label for="fullname">Full Name</label>
       </div>
       <div class="field large">
         <input id="email" name="email" type="email" placeholder="x" required />
@@ -81,6 +87,10 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <input id="newsletter" name="newsletter" type="checkbox" />
           <label for="newsletter">Newsletter</label>
         </div>
+      </div>
+      <div class="field large">
+        <input id="attachment" name="attachment" type="file" placeholder="x" />
+        <label for="attachment">Attachment</label>
       </div>
       <button type="submit" class="form-btn">Send</button>
     </form>

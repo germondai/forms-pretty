@@ -93,6 +93,18 @@
       @apply shdw;
     }
 
+    &:is([type="file"]) {
+      @apply cursor-pointer leading-loose text-center pr-44;
+
+      &::-webkit-file-upload-button {
+        @apply absolute w-40 right-0.5 top-1/2 -translate-y-[50%] content-['Upload_File'];
+        // @apply hidden invisible appearance-none;
+        // @apply float-right;
+      }
+
+      // &::before { @apply absolute top-1/2 right-4 -translate-y-[50%] content-['☁️'] text-3xl; }
+    }
+
     &:required~label {
       @apply flex items-center before:content-['*'] before:text-red-600 before:ml-1 before:mt-0.5 before:order-2 before:text-xl before:leading-none;
     }
