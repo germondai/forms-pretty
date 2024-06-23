@@ -24,19 +24,22 @@ Built from **SCSS** + **TailwindCSS** with **Vite**\
 - Simple download
 - No dependencies
 - No configuration needed
+- Automatically adds \* for required fields
+- Designed for all types of inputs\
+  (select & textarea included)
 
 ## 💾 How to Download Pretty Forms
 
 You should **inject** the **CSS** to your **project**\
 **Download** either **normal** or **gzipped** version from _releases/_\
-or from assets of this 
-<a href="https://github.com/germondai/forms-pretty/releases/latest" target="_blank">release</a>
+or from **assets** of newest
+**<a href="https://github.com/germondai/forms-pretty/releases/latest" target="_blank">release</a>**
 
 **Add to your project**
 
 ```html
 <!-- You may need to adjust your path -->
-<link rel="stylesheet" href="germondaiPrettyForms.css" />
+<link rel="stylesheet" href="prettyForms.css" />
 ```
 
 ## 🛠️ Contribution Instructions
@@ -58,7 +61,7 @@ pnpm build
 
 **Once you built the app**\
 Move both normal and gzipped CSS from _dist/assets/_ to _releases/_\
-and rename them to something like _germondaiPrettyForms_
+and rename them to something like _prettyForms_
 
 ---
 
