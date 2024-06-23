@@ -97,12 +97,16 @@
       @apply cursor-pointer leading-loose text-center pr-44;
 
       &::-webkit-file-upload-button {
-        @apply absolute w-40 right-0.5 top-1/2 -translate-y-[50%] content-['Upload_File'];
-        // @apply hidden invisible appearance-none;
-        // @apply float-right;
+        @apply absolute w-40 h-full left-full top-1/2 p-2 -translate-y-[50%] -translate-x-[100%];
       }
 
-      // &::before { @apply absolute top-1/2 right-4 -translate-y-[50%] content-['☁️'] text-3xl; }
+      &:is(.btn-hide) {
+        @apply pr-2;
+
+        &::-webkit-file-upload-button {
+          @apply hidden invisible appearance-none;
+        }
+      }
     }
 
     &:required~label {
@@ -117,6 +121,15 @@
     &:not(:placeholder-shown)~label {
       @apply text-xs top-1/4 left-2 opacity-60;
     }
+
+    // &.input-icon {
+    //   @apply pr-12;
+
+    //   &::before {
+    //     @apply absolute top-1/2 right-4 -translate-y-[50%] text-3xl;
+    //     // To show icon/emoji/text add content
+    //   }
+    // }
   }
 
   input,
