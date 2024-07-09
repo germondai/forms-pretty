@@ -98,17 +98,19 @@
     }
 
     &:is([type="file"]) {
-      @apply cursor-pointer leading-loose text-center pr-44;
+      @apply cursor-pointer leading-loose pr-44;
 
-      &::-webkit-file-upload-button {
-        @apply absolute w-40 h-full left-full top-1/2 p-2 -translate-y-[50%] -translate-x-[100%];
+      &::-webkit-file-upload-button,
+      &::file-selector-button {
+        @apply absolute w-40 h-full left-full top-1/2 p-2 -translate-y-[50%] -translate-x-[100%] outline-none border-none cursor-pointer;
       }
 
       &:is(.btn-hide) {
         @apply pr-2;
 
-        &::-webkit-file-upload-button {
-          @apply hidden invisible appearance-none;
+        &::-webkit-file-upload-button,
+        &::file-selector-button {
+          @apply hidden invisible appearance-none pointer-events-none;
         }
       }
     }
@@ -145,7 +147,7 @@
 
     &[type='checkbox'],
     &[type='radio'] {
-      @apply min-w-8 w-8 aspect-square;
+      @apply min-w-8 w-8 aspect-square outline-none;
     }
   }
 
