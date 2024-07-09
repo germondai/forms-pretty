@@ -7,7 +7,9 @@ document.querySelector<HTMLStyleElement>('style')!.innerHTML = `
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    color-scheme: dark;
+
+    color-scheme: light;
+    @media (prefers-color-scheme: dark) { color-scheme: dark; }
   }
 
   html,
@@ -31,6 +33,9 @@ document.querySelector<HTMLStyleElement>('style')!.innerHTML = `
     gap: 8px;
     padding: 16px;
     border-radius: 12px;
+
+    background-color: #f1f1f1;
+    @media (prefers-color-scheme: dark) { background-color: #121316; }
   }
 
   @media (max-width: 1440px) {

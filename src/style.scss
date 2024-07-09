@@ -52,9 +52,8 @@
 
       textarea,
       select {
-
-        &:focus~label,
-        &:not(:placeholder-shown)~label {
+        &:focus ~ label,
+        &:not(:placeholder-shown) ~ label {
           @apply top-3;
         }
       }
@@ -72,7 +71,6 @@
     }
 
     &.large {
-
       input:not([type='submit']),
       select,
       textarea {
@@ -95,11 +93,15 @@
       @apply shdw;
 
       &:focus {
-        @apply outline-[0.5px] outline;
+        @apply outline-[0.5px] outline outline-black;
+
+        @media (prefers-color-scheme: dark) {
+          @apply outline-white;
+        }
       }
     }
 
-    &:is([type="file"]) {
+    &:is([type='file']) {
       @apply cursor-pointer leading-loose pr-44;
 
       &::-webkit-file-upload-button,
@@ -122,7 +124,7 @@
       }
     }
 
-    &:required~label {
+    &:required ~ label {
       @apply flex items-center before:content-['*'] before:text-red-600 before:ml-1 before:mt-0.5 before:order-2 before:text-xl before:leading-none;
     }
 
@@ -130,8 +132,8 @@
       @apply text-transparent opacity-0;
     }
 
-    &:focus~label,
-    &:not(:placeholder-shown)~label {
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
       @apply text-xs top-1/4 left-2 opacity-60;
     }
 
@@ -145,7 +147,6 @@
   input,
   button {
     &[type='number'] {
-
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
         appearance: none;
@@ -167,7 +168,6 @@
   }
 
   &.form-overflow {
-
     input,
     button,
     select,
