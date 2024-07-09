@@ -1,10 +1,7 @@
-# Nuxt dev/build outputs
+# Dev/Build outputs
 .output
-.data
-.nuxt
-.nitro
-.cache
 dist
+release
 
 # Node dependencies
 node_modules
@@ -23,5 +20,5 @@ logs
 .env.*
 !.env.example
 
-# Ignore pnpm lock
+# PNPM lock
 pnpm-lock.yaml

@@ -44,6 +44,10 @@
       label {
         @apply relative order-first w-auto transform-none pointer-events-auto;
       }
+
+      &:not(:has(.box)) label {
+        @apply opacity-100 text-base;
+      }
     }
 
     &:has(textarea),
@@ -82,7 +86,7 @@
   input,
   textarea,
   select {
-    margin: 1px;
+    @apply m-px;
 
     &:not([type='submit']) {
       transition: padding-top 0.3s;
