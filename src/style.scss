@@ -91,6 +91,10 @@
 
     &:not([type='submit']):not([type='radio']):not([type='checkbox']) {
       @apply shdw;
+
+      &:focus {
+        @apply outline-[0.5px] outline-white outline;
+      }
     }
 
     &:is([type="file"]) {
