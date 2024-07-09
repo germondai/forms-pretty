@@ -105,6 +105,11 @@
         @apply absolute w-40 h-full left-full top-1/2 p-2 -translate-y-[50%] -translate-x-[100%] outline-none border-none cursor-pointer;
       }
 
+      // hover has to be splitted and put only on webkit version otherwise it doesn't work
+      &::-webkit-file-upload-button:hover {
+        @apply opacity-90 backdrop-blur;
+      }
+
       &:is(.btn-hide) {
         @apply pr-2;
 
