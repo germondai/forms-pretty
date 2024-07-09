@@ -55,12 +55,12 @@
 
         &:focus~label,
         &:not(:placeholder-shown)~label {
-          @apply top-3;
+          @apply top-[10px];
         }
       }
 
       label {
-        @apply top-6;
+        @apply top-[22px];
       }
     }
 
