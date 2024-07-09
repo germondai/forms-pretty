@@ -42,7 +42,7 @@
       }
 
       label {
-        @apply relative order-first w-auto text-white transform-none pointer-events-auto;
+        @apply relative order-first w-auto transform-none pointer-events-auto;
       }
     }
 
@@ -55,7 +55,7 @@
 
         &:focus~label,
         &:not(:placeholder-shown)~label {
-          @apply top-[10px];
+          @apply top-3;
         }
       }
 
@@ -84,6 +84,8 @@
   input,
   textarea,
   select {
+    margin: 1px;
+
     &:not([type='submit']) {
       transition: padding-top 0.3s;
       @apply relative w-full min-h-11 p-4 px-2 pb-0.5 rounded-lg;
@@ -93,7 +95,7 @@
       @apply shdw;
 
       &:focus {
-        @apply outline-[0.5px] outline-white outline;
+        @apply outline-[0.5px] outline;
       }
     }
 
