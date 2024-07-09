@@ -126,14 +126,11 @@
       @apply text-xs top-1/4 left-2 opacity-60;
     }
 
-    // &.input-icon {
-    //   @apply pr-12;
+    // ? icon/emoji/text at end of input
+    //&.input-icon { @apply pr-12; &::before { @apply absolute top-1/2 right-4 -translate-y-[50%] text-3xl; } }
 
-    //   &::before {
-    //     @apply absolute top-1/2 right-4 -translate-y-[50%] text-3xl;
-    //     // To show icon/emoji/text add content
-    //   }
-    // }
+    // ? accent color
+    // &:is([type='radio']), &:is([type='checkbox']) { accent-color: default; }
   }
 
   input,
